@@ -1,0 +1,55 @@
+<div id="testing">
+
+	<p>
+	  {{title}}
+	</p>
+	<div class="col-sm-4">
+			<button class="btn btn-success" (click)="testClickButton()">Testeando Evento Click</button>
+	</div>
+
+	<div class="col-sm-4">
+		<label for="" class="block">Bindeando desde un modelo diseñado (no objeto json)</label>
+		<table class="table table-bordered text-center">
+			<thead>
+				<th class="text-center">Codigo</th>
+				<th class="text-center">Distrito</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{ ubigeo.idubigeo }}</td>
+					<td>{{ ubigeo.distrito }}</td>
+				</tr>
+			</tbody>
+		</table>		
+	</div>
+	
+	<div class="col-sm-4">
+		<label for="" class="block">Bindeando clases con array de objetos json</label>
+		<table class="table table-bordered text-center">
+			<thead>
+				<th class="text-center">Codigo</th>
+				<th class="text-center">Nombre Heroe</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let heroe of heroes">
+					<td>{{ hero.id }}</td>
+					<td>{{ hero.name }}</td>
+				</tr>
+			</tbody>
+		</table>		
+	</div>
+
+
+
+	<div class="col-sm-4 block">
+		<label for="" class="block">Select bindeado + ngModel y disparando eventos</label>
+		<select class="form-control" [(ngModel)]="heroe" (ngModelChange)="selectChanged()">
+			<option *ngFor="let hero of heroes" [ngValue]="hero" >{{hero.name}}</option>
+			<!-- Si solo quieres coger el value simple sería [value], si quieres coger el 
+			object entonces es [ngValue] -->
+		</select>
+		Seleccionaste al heroe: {{ heroe.name }}
+	</div>
+
+	<button (click)="crearNuevoUbigeo()">nuevo Ubigeo</button>
+</div>

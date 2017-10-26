@@ -1,0 +1,11 @@
+#http {
+	font-size: 14px;
+}
+
+.block {
+	display: block;
+}
+
+table>thead>th {
+	text-align: center;
+}

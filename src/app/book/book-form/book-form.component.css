@@ -1,0 +1,19 @@
+#book-form {
+	font-size: 14px;
+}
+
+.block {
+	display: block;
+}
+
+table>thead>th {
+	text-align: center;
+}
+
+.show{
+opacity: 1 !important;
+}
+.step{
+opacity: 0;
+transition: .5s ease-in-out all;
+}

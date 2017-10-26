@@ -1,0 +1,35 @@
+<div id="book-form">
+	<div class="col-sm-12">
+		<form class="form-horizontal">
+			<fieldset>
+				<!-- Form Name -->
+				<legend>New Book</legend>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="title">Name</label>  
+					<div class="col-md-4">
+						<input id="title" name="title" type="text" placeholder="title here" class="form-control input-md" [(ngModel)]="book.name">
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="content">Pages(number)</label>  
+					<div class="col-md-4">
+						<input id="content" name="content" type="text" placeholder="content here" class="form-control input-md" [(ngModel)]="book.pages">
+					</div>
+				</div>
+
+		<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="create"></label>
+					<div class="col-md-4">
+						<button id="create" name="create" class="btn btn-primary" (click)="createOrUpdate()">{{ id == '' ? 'Crear': 'Actualizar'}}</button>	
+						<button id="create" name="create" class="btn btn-primary" (click)="deleteBook()" *ngIf="id!=''">Eliminar</button>						
+					</div>
+				</div>
+
+
+		</fieldset>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<div id="article">
+	Article
+	<div class="col-sm-12">
+		<form class="form-horizontal">
+			<fieldset>
+				<!-- Form Name -->
+				<legend>New Article</legend>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="title">Title</label>  
+					<div class="col-md-4">
+						<input id="title" name="title" type="text" placeholder="title here" class="form-control input-md" [(ngModel)]="article.title">
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="content">Content</label>  
+					<div class="col-md-4">
+						<input id="content" name="content" type="text" placeholder="content here" class="form-control input-md" [(ngModel)]="article.content">
+					</div>
+				</div>
+
+		<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="create"></label>
+					<div class="col-md-4">
+						<button id="create" name="create" class="btn btn-primary" (click)="createArticle()">Create article</button>						
+					</div>
+				</div>
+
+		</fieldset>
+		</form>
+	</div>
+	<div class="col-sm-12">
+		<table class="table table-responsive table-bordered">
+			<thead>
+				<th>Title</th>
+				<th>Content</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let article of articles">
+					<td>{{ article.title }}</td>
+					<td>{{ article.content }}</td>
+					<td>
+						<button (click)="updateArticle(article)">Update</button>
+						<button (click)="deleteArticle(article._id)">Delete</button>
+						<button (click)="findArticleById(article._id)">Find</button>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+</div>
+
+

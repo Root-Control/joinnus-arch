@@ -1,0 +1,25 @@
+<div id="book-list">
+	<button class="btn btn-info" [routerLink]="['createorupdate']">new Book?</button>
+	<div class="col-sm-12">
+		<table class="table table-responsive table-bordered">
+			<thead>
+				<th>Name</th>
+				<th>Pages</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let book of books">
+					<td>{{ book.name }}</td>
+					<td>{{ book.pages }}</td>
+					<td>
+						<a [routerLink]="['detail/' + book._id]">Detail</a>
+						<a [routerLink]="['createorupdate/' + book._id]">Modify</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+</div>
+<button id="holis"> Hogas</button>
+
+
